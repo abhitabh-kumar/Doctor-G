@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const User = require('./model/user')
 const faq=require("./model/faq")
+const review=require("./model/review")
 var nodemailer = require('nodemailer');
 
 const bcrypt = require('bcryptjs')
@@ -33,8 +34,9 @@ app.get("/",async (req,res)=>{
         "Allow-access-Allow-Origin":'*'
     })
 	const arr=await faq.find();
+	const arr2=await review.find();
 	console.log(arr);
-    return res.render('index',{arr:arr});
+    return res.render('index',{arr:arr,arr2:arr2});
 })
 app.get("/book-ambulance",(req,res)=>{
     return res.render('bookambu')})

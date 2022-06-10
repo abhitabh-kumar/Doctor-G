@@ -59,13 +59,17 @@ function plusSlides(n) {
 }
 async function healthNews(n){
   let newsBox=document.getElementsByClassName("box1");
+  let mySlides=document.getElementsByClassName("mySlides");
+  mySlides[0].classList.remove("fade");
   let newsImg=document.getElementsByClassName("NewsImg");
   let newsHeader=document.getElementsByClassName("newsHeader");
   let newsDesc=document.getElementsByClassName("newsDesc");
-  url='https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=6c4c092046de4ab8b32c97d5994919ba';
-  const result=await fetch(url)
+  let newsUrl=document.getElementsByClassName("newsUrl");
+  fetchUrl='https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=6c4c092046de4ab8b32c97d5994919ba';
+  const result=await fetch(fetchUrl)
   .then(response => response.json())
   .then(data => {
+    mySlides[0].classList.add("fade");
     console.log(data)
     for(var i=0;i<3;i++){
       if(n+i<0){
@@ -77,12 +81,41 @@ async function healthNews(n){
         n=n-20;
       }
       data.articles[n+i].urlToImage===null?newsImg[i].src="../img/unavailable.png":newsImg[i].src=`${data.articles[n+i].urlToImage}`;
-      data.articles[n+i].title===null?newsHeader[i]="not availavle":newsHeader[i].innerHTML=`${data.articles[n+i].title}`;
-      data.articles[n+i].description===null?newsDesc[i]="not availavle":newsDesc[i].innerHTML=`${data.articles[n+i].title}`;
+      data.articles[n+i].title===null?newsHeader[i].innerHTML="not availavle":newsHeader[i].innerHTML=`${data.articles[n+i].title}`;
+      data.articles[n+i].description===null?newsDesc[i].innerHTML="not availavle":newsDesc[i].innerHTML=`${data.articles[n+i].title}`;
+      data.articles[n+i].url===null?newsUrl[i].href="#":newsUrl[i].href=`${data.articles[n+i].url}`;
       console.log(n+i);
     }
   });
+  
+}
+ 
+
+setInterval(myGreeting, 5000);
+function myGreeting(){
+  document.getElementsByClassName('review')[0].scrollLeft += 462;
+  removeRow(document.getElementsByClassName('feedFirst')[0]);
+  addRow();
 
 }
+
+function addRow() {
+  const div = document.createElement('div');
+
+  div.className = 'feedBox1';
+
+  div.innerHTML = `<div class="feedverify">
+  <img src="../img/check.png" alt="" srcset="" style="width:1.1rem; height:1.1rem;">
+  <span>Verified User</span>
+  </div><div class="feedname">Abhitabh Kumar</div></div><div class="feedSecond">arrah</div><div class="feedThird"><i class="fa fa-quote-left" style="font-size:48px; color:rgb(67, 133, 255);"></i><span> This app is too good.It's help a lot to appoitment with docctor </span></div></div>
+  `;
+
+  document.getElementsByClassName('setWidth')[0].appendChild(div);
+}
+
+function removeRow (input) {
+    input.parentNode.remove()
+  }
+
 
 

@@ -15,6 +15,7 @@ function nextSlide(n) {
     let newsImg=document.getElementsByClassName("NewsImg");
     let newsHeader=document.getElementsByClassName("newsHeader");
     let newsDesc=document.getElementsByClassName("newsDesc");
+    let newsUrl=document.getElementsByClassName("newsUrl");
     url='https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=6c4c092046de4ab8b32c97d5994919ba';
     const result=await fetch(url)
     .then(response => response.json())
@@ -30,8 +31,9 @@ function nextSlide(n) {
           n=n-20;
         }
         data.articles[n+i].urlToImage===null?newsImg[i].src="../img/unavailable.png":newsImg[i].src=`${data.articles[n+i].urlToImage}`;
-        data.articles[n+i].title===null?newsHeader[i]="not availavle":newsHeader[i].innerHTML=`${data.articles[n+i].title}`;
-        data.articles[n+i].description===null?newsDesc[i]="not availavle":newsDesc[i].innerHTML=`${data.articles[n+i].title}`;
+        data.articles[n+i].title===null?newsHeader[i].innerHTML="not availavle":newsHeader[i].innerHTML=`${data.articles[n+i].title}`;
+        data.articles[n+i].url===null?newsUrl[i].href="#":newsUrl[i].href=`${data.articles[n+i].url}`;
+        data.articles[n+i].description===null?newsDesc[i].innerHTML="not availavle":newsDesc[i].innerHTML=`${data.articles[n+i].title}`;
         console.log(n+i);
       }
     });

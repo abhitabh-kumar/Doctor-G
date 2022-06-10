@@ -1,9 +1,11 @@
 .newsBack{
     width: 100%;
     height: fit-content;
-    margin-top: 3rem;
+    margin-top: 4rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   
   }
   .butt{
@@ -15,14 +17,15 @@
       background-color: rgb(34, 152, 255);
       color: white;
       font-size: 1.2rem;
+      font-weight: bold;
       padding: 6px 12px 6px 12px;
       margin: 4px;
-      border: 1px solid blue;
+      border: 1px solid rgb(65, 65, 255);
       border-radius: 4px;
       cursor: pointer;
   }
   .buttNews:hover{
-      background-color: rgb(0, 17, 33);
+      background-color: rgb(4, 122, 232);
   }
   .buttNews:active{
       transform: scale(0.98);
@@ -54,12 +57,4 @@
       border-radius: 4px;
       cursor: pointer;
   }
-  .kal{
-      width: 100%;
-      height: fit-content;
-      display: flex;
-      justify-content: right;
-      margin-bottom: 7px;
-      position: relative;
-      bottom: 0;
-  }
+ 

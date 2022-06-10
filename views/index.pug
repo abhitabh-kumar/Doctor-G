@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Doctor G</title>
         <link rel="icon" type="image/png" href="../img/icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="../index.css">
     </head>
 <body>
@@ -18,6 +19,8 @@
        include main/processline.pug 
        include main/article.pug 
        include main/subscribe.pug 
+       h1(style="text-align:center; width:100%; background-color: #f7f7f7; border-top: 1px solid black;")
+        | Patient's fedback
        include main/review.pug 
        div(class="faq")
             div(class="heading")
@@ -41,6 +44,6 @@
           include main/login.pug 
           include main/registration.pug 
     script(src='../form1.js')
-    script(src='../index.js')
+    script(src='../index.js' defer)
 </body>
 </html>

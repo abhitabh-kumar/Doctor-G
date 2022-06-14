@@ -10,6 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
   /* font-family: 'Macondo', cursive; */
 *{
     margin:0px;
@@ -44,60 +45,66 @@ body{
     z-index: 11;
     top: 0;
     width: 100%;
-   
+   display: flex;
+   background-color: rgb(19, 74, 126);
+   border-bottom: 1px solid rgb(255, 255, 255);
 }
 .nav{
-     background-color: rgb(19, 74, 126);
-     width: 100%;
+     width: fit-content;
      height: 3.6rem;
      display: flex;
-     border-bottom: 1px solid rgb(255, 255, 255);
+     position: relative;
+     right: 0;
 }
 .navbar{
-    width: 50%;
+    width: fit-content;
     display: flex;
 }
 .logo{
     margin: 0.5rem;;
     margin-top: 0.6rem;
     height: 2.5rem;
-   
+   display: flex;
 }
 .logo img{
     /* border: 3px solid rgb(238, 236, 236); */
     border-radius: 100px;
     height:100%;
 }
+
 .navbar li{
     list-style: none;
     padding-top: 1rem;
-    padding-left: 1.8rem;
-    padding-right: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1rem;
 }
 .navbar li a{
-    font-family: cursive;
+    font-family: 'Signika Negative', sans-serif;
     font-size: 1.3rem;
     color: rgb(255, 255, 255);
     text-decoration: none;
     
 }
 .navbar li a:hover{
-    color: greenyellow;
+    color: rgb(0, 255, 247);
+    font-weight: bold;
+    text-shadow: 0px 0px 20px rgba(20, 0, 90, 0.276);
 }
 .search{
-   
-    width:50%;
+    width:fit-content;
     text-align: right;
     padding-right: 1.2rem;
     padding: 0.4rem;
     display: flex;
     justify-content: right;
+    position: relative;
+    right: 0;
 }
 #search1{
     font-size: 0.9rem;
     border: 2px solid white;
     margin: 0.3rem;
-    
+    display: none;
     padding:1rem;
     border-radius: 8px;
     text-align: center;
@@ -216,7 +223,7 @@ body{
     font-size: 1.5rem;
     cursor: pointer;
     transition: 0.3s;
-    padding:0rem 1rem 0rem 1rem;
+    padding:0.05rem 1rem 0rem 1rem;
     background-color: rgb(255, 147, 147);
 }
 .closeNews:hover {
@@ -266,7 +273,7 @@ body{
     position: fixed;
     top: 3rem;
     z-index: -3;
-    background-image: url("img/bck.jpg");
+    background-image: url("img/back1.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100vw;
@@ -282,7 +289,7 @@ body{
 .content1{
     padding: 4rem;
     padding-top: 11rem;
-    background-image: linear-gradient(to right, rgb(41, 41, 41), rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to right, rgba(41, 41, 41, 0.9), rgba(255, 255, 255, 0));
     height: 29rem;
     display: flex;
 }

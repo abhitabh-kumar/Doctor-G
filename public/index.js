@@ -93,7 +93,7 @@ async function healthNews(n){
 
 setInterval(myGreeting, 5000);
 function myGreeting(){
-  document.getElementsByClassName('review')[0].scrollLeft += 462;
+  // document.getElementsByClassName('review')[0].scrollLeft += 462;
   removeRow(document.getElementsByClassName('feedFirst')[0]);
   addRow();
 
@@ -104,10 +104,11 @@ function addRow() {
 
   div.className = 'feedBox1';
 
-  div.innerHTML = `<div class="feedverify">
+  div.innerHTML = ` <div class="feedFirst">
+  <div class="feedverify">
   <img src="../img/check.png" alt="" srcset="" style="width:1.1rem; height:1.1rem;">
   <span>Verified User</span>
-  </div><div class="feedname">Abhitabh Kumar</div></div><div class="feedSecond">arrah</div><div class="feedThird"><i class="fa fa-quote-left" style="font-size:48px; color:rgb(67, 133, 255);"></i><span> This app is too good.It's help a lot to appoitment with docctor </span></div></div>
+  </div><div class="feedname">Abhitabh 5 Kumar</div></div><div class="feedSecond">arrah</div><div class="feedThird"><i class="fa fa-quote-left" style="font-size:48px; color:rgb(67, 133, 255);"></i><span> This app is too good.It's help a lot to appoitment with docctor </span></div></div>
   `;
 
   document.getElementsByClassName('setWidth')[0].appendChild(div);

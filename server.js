@@ -120,8 +120,8 @@ app.post('/api/login', async (req, res) => {
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
-	  user: 'abhitabhkp.ic.20@nitj.ac.in',
-	  pass: '8092435285'
+	  user: '-------',//put your gamil
+	  pass: '-------'//put your gmail password
 	}
   });
 app.post('/api/subscribe', (req, res) => {
